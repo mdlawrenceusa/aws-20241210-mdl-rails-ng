@@ -1,0 +1,18 @@
+<!-- app/views/beans/index.html.erb -->
+<h1>Coffee Beans</h1>
+
+<% if flash[:error] %>
+  <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+
+<div class="beans-container">
+  <% @beans.each do |bean| %>
+    <div class="bean-card">
+      <h2><%= bean['product_name'] %></h2>
+      <p class="type">Type: <%= bean['type'] %></p>
+      <p class="price">Price: $<%= bean['price'] %></p>
+      <p class="description"><%= bean['description'] %></p>
+      <p class="quantity">Available: <%= bean['quantity'] %> units</p>
+    </div>
+  <% end %>
+</div>
